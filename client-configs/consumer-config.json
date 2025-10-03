@@ -1,0 +1,27 @@
+{
+  "bootstrap_servers": ["${REDPANDA_KAFKA_ENDPOINT}"],
+  "security_protocol": "SASL_SSL",
+  "sasl_mechanism": "SCRAM-SHA-256",
+  "sasl_plain_username": "${CONSUMER_USER}",
+  "sasl_plain_password": "${CONSUMER_PASSWORD}",
+  "group_id": "redpanda-consumer-group",
+  "client_id": "redpanda-consumer",
+  "auto_offset_reset": "earliest",
+  "enable_auto_commit": true,
+  "auto_commit_interval_ms": 5000,
+  "session_timeout_ms": 30000,
+  "heartbeat_interval_ms": 3000,
+  "max_poll_records": 500,
+  "max_poll_interval_ms": 300000,
+  "fetch_min_bytes": 1,
+  "fetch_max_wait_ms": 500,
+  "request_timeout_ms": 30000,
+  "retry_backoff_ms": 1000,
+  "reconnect_backoff_ms": 50,
+  "reconnect_backoff_max_ms": 1000,
+  "schema_registry_url": "${REDPANDA_SCHEMA_REGISTRY_ENDPOINT}",
+  "schema_registry_auth": {
+    "username": "${CONSUMER_USER}",
+    "password": "${CONSUMER_PASSWORD}"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "bootstrap_servers": ["${REDPANDA_KAFKA_ENDPOINT}"],
+  "security_protocol": "SASL_SSL",
+  "sasl_mechanism": "SCRAM-SHA-256",
+  "sasl_plain_username": "${PRODUCER_USER}",
+  "sasl_plain_password": "${PRODUCER_PASSWORD}",
+  "client_id": "redpanda-producer",
+  "acks": "all",
+  "retries": 3,
+  "retry_backoff_ms": 1000,
+  "request_timeout_ms": 30000,
+  "delivery_timeout_ms": 120000,
+  "compression_type": "snappy",
+  "batch_size": 16384,
+  "linger_ms": 10,
+  "buffer_memory": 33554432,
+  "max_block_ms": 60000,
+  "enable_idempotence": true,
+  "schema_registry_url": "${REDPANDA_SCHEMA_REGISTRY_ENDPOINT}",
+  "schema_registry_auth": {
+    "username": "${PRODUCER_USER}",
+    "password": "${PRODUCER_PASSWORD}"
+  }
+}

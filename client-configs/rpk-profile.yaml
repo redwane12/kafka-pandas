@@ -1,0 +1,24 @@
+# Configuração RPK para clientes conectarem ao Redpanda em produção
+# Substitua as variáveis de ambiente pelos valores reais
+
+kafka_api:
+  sasl:
+    user: ${CONSUMER_USER}
+    password: ${CONSUMER_PASSWORD}
+    mechanism: scram-sha-256
+  brokers:
+    - ${REDPANDA_KAFKA_ENDPOINT}
+
+admin_api:
+  addresses:
+    - ${REDPANDA_ADMIN_ENDPOINT}
+  auth:
+    username: ${CONSUMER_USER}
+    password: ${CONSUMER_PASSWORD}
+
+schema_registry:
+  urls:
+    - ${REDPANDA_SCHEMA_REGISTRY_ENDPOINT}
+  auth:
+    username: ${CONSUMER_USER}
+    password: ${CONSUMER_PASSWORD}
