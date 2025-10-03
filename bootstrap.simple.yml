@@ -1,0 +1,44 @@
+# Configuração simplificada para Redpanda
+admin_api_require_auth: true
+enable_sasl: true
+auto_create_topics_enabled: true
+data_transforms_enabled: true
+
+# Configurações de Performance
+smp: 2
+memory: 2G
+reserve_memory: 0M
+overprovisioned: false
+
+# Configurações de Rede
+kafka_api:
+  - address: 0.0.0.0
+    port: 9092
+    authentication_method: sasl
+
+pandaproxy:
+  - address: 0.0.0.0
+    port: 8082
+    authentication_method: sasl
+
+schema_registry:
+  - address: 0.0.0.0
+    port: 8081
+    authentication_method: http_basic
+
+# Configurações de Log
+default_log_level: info
+
+# Configurações de Retenção
+log_segment_size: 134217728
+log_retention_ms: 604800000
+log_compression_type: snappy
+
+# Configurações de Replicação
+default_topic_replications: 1
+default_topic_partitions: 3
+
+# Configurações de Métricas
+enable_metrics: true
+metrics_address: 0.0.0.0
+metrics_port: 9644
