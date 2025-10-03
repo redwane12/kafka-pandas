@@ -41,4 +41,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD rpk cluster info || exit 1
 
 # Script de inicialização para Railway
-CMD ["/app/scripts/start-railway.sh"]
+CMD ["/bin/bash", "/app/scripts/start-railway.sh"]
