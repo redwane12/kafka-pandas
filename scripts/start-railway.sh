@@ -3,7 +3,7 @@ set -e
 
 echo "🚀 Iniciando Redpanda no Railway..."
 
-# Configurar variáveis de ambiente básicas
+# Configurar variáveis de ambiente se não existirem
 export REDPANDA_RPC_SERVER="${REDPANDA_RPC_SERVER:-0.0.0.0:33145}"
 export REDPANDA_KAFKA_API="${REDPANDA_KAFKA_API:-0.0.0.0:9092}"
 export REDPANDA_PANDAPROXY_API="${REDPANDA_PANDAPROXY_API:-0.0.0.0:8082}"
@@ -33,6 +33,6 @@ echo "  - SMP: $REDPANDA_SMP"
 echo "  - Memory: $REDPANDA_MEMORY"
 echo "  - Log Level: $REDPANDA_LOG_LEVEL"
 
-# Iniciar Redpanda usando o entrypoint padrão (sem argumentos)
+# Iniciar Redpanda diretamente (sem argumentos extras)
 echo "🎯 Iniciando Redpanda..."
-exec redpanda
+exec redpanda start
