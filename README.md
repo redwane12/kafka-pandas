@@ -111,3 +111,4 @@ REDPANDA_OVERPROVISIONED=false
 
 Para problemas ou dúvidas, consulte a documentação oficial do Redpanda ou abra uma issue no repositório.
 # kafka-pandas
+# kafka-pandas
