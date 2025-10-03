@@ -15,6 +15,7 @@ RUN mkdir -p /etc/redpanda /var/lib/redpanda/data
 # Copiar arquivos de configuração
 COPY bootstrap.simple.yml /etc/redpanda/bootstrap.yml
 COPY transactions-schema.json /etc/redpanda/
+COPY env.example .env
 
 # Configurar usuário não-root (usuário já existe na imagem base)
 RUN chown -R redpanda:redpanda /var/lib/redpanda /etc/redpanda
