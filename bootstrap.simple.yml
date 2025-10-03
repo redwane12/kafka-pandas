@@ -4,12 +4,6 @@ enable_sasl: true
 auto_create_topics_enabled: true
 data_transforms_enabled: true
 
-# Configurações de Performance
-smp: 2
-memory: 2G
-reserve_memory: 0M
-overprovisioned: false
-
 # Configurações de Rede
 kafka_api:
   - address: 0.0.0.0
