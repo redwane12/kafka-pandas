@@ -1,3 +1,4 @@
+
 # Dockerfile simplificado para Railway - Sem argumentos extras
 FROM docker.redpanda.com/redpandadata/redpanda:v25.2.7
 
@@ -28,4 +29,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD rpk cluster info || exit 1
 
 # Usar o comando start do rpk (comando correto)
-CMD ["rpk", "redpanda", "start"]
+CMD ["redpanda start"]
