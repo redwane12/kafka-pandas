@@ -27,5 +27,5 @@ EXPOSE 9092 8081 8082 9644
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
     CMD rpk cluster info || exit 1
 
-# Usar o entrypoint padrão do Redpanda (sem argumentos)
-CMD ["redpanda"]
+# Usar o comando start do rpk (comando correto)
+CMD ["rpk", "redpanda", "start"]
